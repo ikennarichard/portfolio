@@ -14,7 +14,8 @@ tags:
 
 > Tell me and I forget. Teach me and I remember. Involve me and I learn.
 
-## Expected Behavior
+
+[site](https://ikennarichard.github.io/Intro-section-with-dropdown-navigation/)
 
 - View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
 - View the optimal layout for the content depending on their device's screen size
