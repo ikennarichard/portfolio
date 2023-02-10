@@ -1,0 +1,21 @@
+---
+title: Snap Intro Section
+publishDate: 2022-12-12
+img: /assets/Intro-section-with-dropdown-navigation.png
+img_alt: Image of snap homepage
+description: |
+  This is a solution to the Intro section with dropdown navigation challenge on Frontend Mentor.
+tags:
+  - Design
+  - Frontend
+---
+
+[site](https://ikennarichard.github.io/Intro-section-with-dropdown-navigation/)
+
+> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+
+## Expected Behavior
+
+- View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
+- View the optimal layout for the content depending on their device's screen size
+- See hover states for all interactive elements on the page
