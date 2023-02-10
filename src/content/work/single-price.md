@@ -9,7 +9,7 @@ tags:
   - Frontend
 ---
 
-The challenge
+[site](https://ikennarichard.github.io/Intro-section-with-dropdown-navigation/)
 
 Users should be able to:
 
