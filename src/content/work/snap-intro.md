@@ -10,8 +10,6 @@ tags:
   - Frontend
 ---
 
-[site](https://ikennarichard.github.io/Intro-section-with-dropdown-navigation/)
-
 > Tell me and I forget. Teach me and I remember. Involve me and I learn.
 
 
