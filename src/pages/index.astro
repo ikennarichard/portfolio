@@ -16,13 +16,10 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 
-// Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-	.slice(0, 4);
+	.slice(0, 2);
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <BaseLayout>
@@ -30,13 +27,12 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Ikenna Richard"
-					tagline="I am a Frontend Developer currently based in Nigeria"
+					title="Hello, I'm Richard ✌️"
+					tagline="Software Developer currently based in Nigeria"
 					align="start"
 				>
 					<div class="roles">
 						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Artist</Pill>
 					</div>
 				</Hero>
 			</header>
@@ -70,30 +66,7 @@ const projects = (await getCollection('work'))
 					</CallToAction>
 				</div>
 			</section>
-<!-- 
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to recieve praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section> -->
 		</main>
-
 		<ContactCTA />
 	</div>
 </BaseLayout>
@@ -144,7 +117,7 @@ const projects = (await getCollection('work'))
 	}
 
 	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-2);
+		/* --hero-bg: var(--bg-image-subtle-2); */
 
 		content: '';
 		position: absolute;
@@ -154,15 +127,15 @@ const projects = (await getCollection('work'))
 		aspect-ratio: calc(2.25 / var(--bg-scale));
 		top: 0;
 		transform: translateY(-75%) translateX(-50%);
-		background: url('/assets/backgrounds/noise.png') top center/220px repeat,
+		/* background: url('/assets/backgrounds/noise.png') top center/220px repeat,
 			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat, var(--gray-999);
 		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
+		mix-blend-mode: var(--bg-blend-mode); */
 		z-index: -1;
 	}
 
 	.with-background.bg-variant::before {
-		--hero-bg: var(--bg-image-subtle-1);
+		/* --hero-bg: var(--bg-image-subtle-1); */
 	}
 
 	.section-header {
