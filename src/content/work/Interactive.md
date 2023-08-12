@@ -13,7 +13,7 @@ tags:
 
 The challenge
 
-[Site](https://ikennarichard.github.io/Interactive-details-page/)
+- [Live Demo](https://ikennarichard.github.io/Interactive-details-page/)
 
 Users should be able to:
 

@@ -10,8 +10,8 @@ tags:
   - Microverse
 ---
 
-[site](https://budget-buddy-j2ry.onrender.com)
-[github](https://github.com/ikennarichard/Budget-Buddy)
+- [site](https://budget-buddy-j2ry.onrender.com)
+- [github](https://github.com/ikennarichard/Budget-Buddy)
 
 Users should be able to:
 
