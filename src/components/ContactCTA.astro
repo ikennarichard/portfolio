@@ -5,10 +5,39 @@ import Icon from './Icon.astro';
 
 <aside>
 	<h2>Interested in working together?</h2>
-	<CallToAction href="mailto:oguejioforrichard@gmail.com">
-		Send Me a Message
-		<Icon icon="paper-plane-tilt" size="1.2em" />
-	</CallToAction>
+	<div class="contact_form">
+		<form action="https://formspree.io/f/xbjeoyol" method="post">
+			<label for="fullname" hidden>Fullname</label>
+			<input
+				id="fullname"
+				type="text"
+				placeholder="Full name"
+				name="fullname"
+				maxlength="30"
+				required
+			/>
+			<label for="email" hidden>Email</label>
+			<input
+				id="email"
+				type="email"
+				placeholder="Email Address"
+				name="email"
+				required
+			/>
+			<label for="message" hidden>Message</label>
+			<textarea
+				id="message"
+				name="message"
+				placeholder="Enter text here"
+				maxlength="500"
+				required
+			></textarea>
+			<button>
+				Send Me a Message
+				<Icon icon="paper-plane-tilt" size="1.2em" />
+			</button>
+		</form>
+	</div>
 </aside>
 
 <style>
@@ -21,7 +50,6 @@ import Icon from './Icon.astro';
 		border-bottom: 1px solid var(--gray-800);
 		padding: 5rem 1.5rem;
 		background-color: var(--gray-900);
-		box-shadow: var(--shadow-sm);
 	}
 
 	h2 {
@@ -30,6 +58,76 @@ import Icon from './Icon.astro';
 		max-width: 15ch;
 	}
 
+	.contact_form {
+  width: 327px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  padding-inline-start: 1em;
+  font-size: 0.938rem;
+  color: var(--slate-gray);
+}
+
+input {
+  padding-block: 1em;
+}
+
+textarea {
+  padding-block-start: 1em;
+  height: 117px;
+  font-family: "Inter", sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid var(--accent-regular);
+  color: black;
+}
+
+button {
+		position: relative;
+		display: flex;
+		place-content: center;
+		text-align: center;
+		padding: 0.56em 2em;
+		gap: 0.8em;
+		color: var(--accent-text-over);
+		text-decoration: none;
+		line-height: 1.1;
+		border: none;
+		border-radius: 999rem;
+		overflow: hidden;
+		background: var(--accent-regular);
+		white-space: nowrap;
+	}
+
+	button:hover {
+		background-color: var(--accent-dark);
+		box-shadow: var(--shadow-md);
+		cursor: pointer;
+	}
+
+	@media (min-width: 20em) {
+		button {
+			font-size: var(--text-lg);
+		}
+	}
+
+	@media (min-width: 50em) {
+		button {
+			padding: 1.125rem 2.5rem;
+			font-size: var(--text-xl);
+		}
+	}
 	@media (min-width: 50em) {
 		aside {
 			padding: 7.5rem;
@@ -42,5 +140,11 @@ import Icon from './Icon.astro';
 			font-size: var(--text-3xl);
 			text-align: left;
 		}
+
+		.contact_form {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin-block-start: 1em;
+  }
 	}
 </style>
