@@ -3,19 +3,12 @@ title: Budget Buddy
 publishDate: 2023-01-22
 img: /assets/budget-buddy-homepage.PNG
 img_alt: budget-buddy-mobile-homepage
-description: A mobile web application where you can manage your budget
 tags:
   - Rails
   - Ruby
-  - Microverse
+  - Bootstrap
+source_code: https://github.com/ikennarichard/Budget-Buddy
+live_preview: https://budget-buddy-j2ry.onrender.com
 ---
 
-- [site](https://budget-buddy-j2ry.onrender.com)
-- [github](https://github.com/ikennarichard/Budget-Buddy)
-
-Users should be able to:
-
-- Display Categories
-- Display transactions for each each category
-- Add category that you want to track
-- Add transactions for the category
+A mobile web application that helps you manage your budget, you can manage a list of transactions under a certain category, which shows how much money you spent and on what.
