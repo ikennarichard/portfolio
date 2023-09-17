@@ -9,6 +9,5 @@ tags:
   - JavaScript
 source_code: https://github.com/ikennarichard/Interactive-details-page
 live_preview: https://ikennarichard.github.io/Interactive-details-page/
+description: Effortless payment with an interactive card details form. Card details update in real-time, receive instant error alerts for any issues.
 ---
-
-Effortless payment management with our interactive card details form. Watch your card details update in real-time, receive instant error alerts for any issues, and enjoy an awsesome experince on any device.

@@ -9,6 +9,7 @@ tags:
   - Javascript
 source_code: https://github.com/ikennarichard/Expenses-chart-component
 live_preview: https://ikennarichard.github.io/Expenses-chart-component/
+description: A web app thats tracks your expenses with a dynamic bar chart, instantly spot today's expenses in a different color.
 ---
 
-Track your expenses effortlessly with our Expenses App! see your spending habits with a dynamic bar chart, instantly spot today's expenses in a different color, enjoy a seamless layout on any device.
+
