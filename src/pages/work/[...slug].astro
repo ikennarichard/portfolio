@@ -25,7 +25,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
+<BaseLayout title={entry.data.title}>
 	<div class="stack gap-20">
 		<div class="stack gap-15">
 			<header>
@@ -36,7 +36,6 @@ const { Content } = await entry.render();
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
-							<p class="description">{entry.data.description}</p>
 						</div>
 					</Hero>
 				</div>
@@ -46,6 +45,10 @@ const { Content } = await entry.render();
 					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					<div class="content">
 						<Content />
+					</div>
+					<div class="project_links">
+						<a class="links" href= {entry.data.source_code}>Source Code</a>
+						<a class="links" href= {entry.data.live_preview}>Live Preview</a>
 					</div>
 				</div>
 			</main>
@@ -58,6 +61,13 @@ const { Content } = await entry.render();
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);
+	}
+
+	img {
+		width: 400px;
+		height: 400px;
+		object-fit: cover;
+		margin-inline: auto;
 	}
 
 	.back-link {
@@ -129,6 +139,14 @@ const { Content } = await entry.render();
 	.content :global(a:hover),
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
+	}
+
+	.links {
+		appearance: none;
+		background-color: var(--accent-regular);
+		color: white;
+		padding: 1em;
+		border-radius: 4px 3px 4px 3px;
 	}
 
 	@media (min-width: 50em) {

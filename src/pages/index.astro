@@ -17,7 +17,7 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 
 const projects = (await getCollection('work'))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.sort((a, b) => b.data.title - a.data.title)
 	.slice(0, 2);
 ---
 
@@ -27,7 +27,7 @@ const projects = (await getCollection('work'))
 			<header class="hero">
 				<Hero
 					title="Hello, I'm Richard ✌️"
-					tagline="Software Developer currently based in Nigeria"
+					tagline="Software Developer currently based in Nigeria, I appreciate the intricacies of code and human behavior, which translates into better, more user-centric software."
 					align="start"
 				>
 					<div class="roles">

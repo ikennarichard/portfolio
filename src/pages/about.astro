@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Icon from '../components/Icon.astro'
 ---
 
 <BaseLayout title="About | Ikenna Richard" description="About Ikenna Richard">
@@ -10,15 +12,23 @@ import Hero from '../components/Hero.astro';
 		<main class="wrapper about">
 			<Hero
 				title="About me"
-				tagline="Thanks for visiting my page. Read below to learn more about me."
 			>
 			</Hero>
 
 			<section>
-				<div class="content">
+				<div class="content stack gap-10">
 					<p>
-						Hello there! I'm Richard, a dedicated and enthusiastic software developer. I have a special fondness for JavaScript and a strong belief in user-centered design. My motivation comes from the joy of transforming ideas into reality.
+						Hey there! I'm Richard, a tech enthusiast who loves creating engaging web applications. I've had the opportunity to build full-stack applications alongside a diverse group of developers.
+
+						I'm all about bringing a touch of excitement and creativity to my work.
 					</p>
+					<p>
+						Outside of programming, I love traveling and exploring new places on exciting road trips. If you find yourself in my current city, Umuahia, perhaps we could go on a weekend road trip or work on coding projects together.</p>
+
+						<button href="https://docs.google.com/document/d/e/2PACX-1vQSdEacd6mKbCBWJCc1UFPIVIohaUHk0F1qaJhsKKoVaZUJ6yN8p3imFVh3MdzJU5w_n2f2Z2aKuzBc/pub?embedded=true" target="_blank">
+							Get My Resume
+							<Icon icon="paper-plane-tilt" size="1.2em" />
+						</button>
 				</div>
 			</section>
 		</main>
@@ -55,7 +65,7 @@ import Hero from '../components/Hero.astro';
 
 	.content {
 		grid-column: 1 / 4;
-		max-width: 550px;
+		max-width: 700px;
 		margin-inline: auto;
 	}
 
@@ -70,6 +80,39 @@ import Hero from '../components/Hero.astro';
 		text-decoration-color: currentColor;
 	}
 
+	button {
+		appearance: none;
+		border:: none;
+		position: relative;
+		display: flex;
+		place-content: center;
+		text-align: center;
+		padding: 0.56em 2em;
+		gap: 0.8em;
+		color: var(--accent-text-over);
+		text-decoration: none;
+		line-height: 1.1;
+		border: none;
+		border-radius: 999rem;
+		overflow: hidden;
+		background: var(--accent-regular);
+		white-space: nowrap;
+	}
+
+	button:hover {
+		background-color: var(--accent-dark);
+		box-shadow: var(--shadow-md);
+		cursor: pointer;
+	}
+
+	@media (min-width: 20em) {
+		button {
+			font-size: var(--text-lg);
+		}
+	}
+
+	
+
 	@media (min-width: 50em) {
 		.about {
 			display: grid;
@@ -83,6 +126,11 @@ import Hero from '../components/Hero.astro';
 		section {
 			display: contents;
 			font-size: var(--text-lg);
+		}
+
+		button {
+			padding: 1.125rem 2.5rem;
+			font-size: var(--text-xl);
 		}
 	}
 </style>
