@@ -8,16 +8,29 @@ interface Props {
 const { data, slug } = Astro.props.project;
 ---
 
-<a class="card" href={`/work/${slug}`}>
-	<span class="title">{data.title}</span>
+<div class="card">
 	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
-</a>
+	<div class="info">
+		<span class="title">{data.title}</span>
+		<div>
+			{data.tags.join(', ')}
+			<p>{data.description}</p>
+		</div>
+		<div>
+			<a href={data.source_code} target="_blank">Source Code</a>
+			<a href={data.live_preview} target="_blank">Live Preview</a>
+		</div>
+	</div>
+</div>
 
 <style>
 	.card {
-		display: grid;
-		grid-template: auto 1fr / auto 1fr;
-		height: 11rem;
+		min-width: 350px;
+    height: 15rem;
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
@@ -25,31 +38,79 @@ const { data, slug } = Astro.props.project;
 		box-shadow: var(--shadow-sm);
 		text-decoration: none;
 		font-family: var(--font-brand);
-		font-size: var(--text-lg);
-		font-weight: 500;
+		/* font-size: var(--text-lg); */
+		/* font-weight: 500; */
+		text-align: center;
 		transition: all var(--theme-transition);
 	}
 
-	.card:hover {
-		box-shadow: var(--shadow-lg);
-		scale: 1.05;
+	.card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    transition: 0.5s;
 	}
 
-	.title {
-		grid-area: 1 / 1 / 2 / 2;
-		z-index: 1;
-		margin: 0.5rem;
-		padding: 0.5rem 1rem;
-		background: var(--gray-999);
-		color: var(--gray-200);
-		border-radius: 0.375rem;
+	.card img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 15px;
 	}
 
-	img {
-		grid-area: 1 / 1 / 3 / 3;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+	.card .info {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 1em;
+			z-index: 3;
+			color: white;
+			transition: 0.5s;
+	}
+
+	.card .info span {
+			margin: 0;
+	}
+
+	.card .info p {
+			letter-spacing: 1px;
+			font-size: 15px;
+			margin-top: 8px;
+			margin-inline: auto;
+			width: 85%;
+	}
+
+	.card .info a {
+			padding: 0.6rem;
+			outline: none;
+			border: none;
+			border-radius: 3px;
+			text-decoration: none;
+			background: whitesmoke;
+			color: black;
+			cursor: pointer;
+			transition: 0.4s ease;
+	}
+
+	.card .info a:hover {
+    background: var(--accent-regular);
+		box-shadow: var(--shadow-md);
+    color: white;
 	}
 
 	@media (min-width: 50em) {
@@ -60,6 +121,34 @@ const { data, slug } = Astro.props.project;
 
 		.title {
 			border-radius: 0.9375rem;
+		}
+
+		.card .info {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+
+		.card:before {
+			opacity: 0;
+		}
+
+		.card:hover {
+			transform: translateY(5px);
+		}
+
+		.card:hover:before {
+			opacity: 1;
+		}
+
+		.card .info:hover {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+
+		.card .info a:hover {
+			background: var(--accent-regular);
+			box-shadow: var(--shadow-md);
+			color: white;
 		}
 	}
 </style>
