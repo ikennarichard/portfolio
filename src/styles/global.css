@@ -127,6 +127,7 @@ body {
 	font-family: var(--font-body);
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.5;
+	scroll-behavior: smooth;
 }
 
 *,
