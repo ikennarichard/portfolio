@@ -9,7 +9,6 @@ const textLinks: { label: string; href: string }[] = [
 	{ label: 'About', href: '/about/' },
 ];
 
-/** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	{ label: 'Twitter', href: 'https://twitter.com/ikennarichard_', icon: 'twitter-logo' },
 	{ label: 'GitHub', href: 'https://github.com/ikennarichard', icon: 'github-logo' },
@@ -66,7 +65,9 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 					))
 				}
 			</div>
-
+			<div>
+				<a href="#contact" class="cta">Contact me</a>
+			</div>
 			<div class="theme-toggle">
 				<ThemeToggle />
 			</div>
@@ -192,6 +193,14 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 
 	.link.active {
 		color: var(--gray-0);
+	}
+
+	.cta {
+		text-decoration: none;
+	}
+
+	.cta:hover {
+		color: var(--gray-100);
 	}
 
 	.menu-footer {
