@@ -25,10 +25,10 @@ import Icon from '../components/Icon.astro'
 					<p>
 						Outside of programming, I love traveling and exploring new places on exciting road trips. If you find yourself in my current city, Umuahia, perhaps we could go on a weekend road trip or work on coding projects together.</p>
 
-						<button href="https://docs.google.com/document/d/e/2PACX-1vQSdEacd6mKbCBWJCc1UFPIVIohaUHk0F1qaJhsKKoVaZUJ6yN8p3imFVh3MdzJU5w_n2f2Z2aKuzBc/pub?embedded=true" target="_blank">
+						<a href="https://docs.google.com/document/d/e/2PACX-1vQSdEacd6mKbCBWJCc1UFPIVIohaUHk0F1qaJhsKKoVaZUJ6yN8p3imFVh3MdzJU5w_n2f2Z2aKuzBc/pub?embedded=true" target="_blank">
 							Get My Resume
 							<Icon icon="paper-plane-tilt" size="1.2em" />
-						</button>
+						</a>
 				</div>
 			</section>
 		</main>
@@ -80,8 +80,7 @@ import Icon from '../components/Icon.astro'
 		text-decoration-color: currentColor;
 	}
 
-	button {
-		appearance: none;
+	a {
 		border:: none;
 		position: relative;
 		display: flex;
@@ -97,16 +96,17 @@ import Icon from '../components/Icon.astro'
 		overflow: hidden;
 		background: var(--accent-regular);
 		white-space: nowrap;
+		text-decoration: none !important;
 	}
 
-	button:hover {
+	a:hover {
 		background-color: var(--accent-dark);
 		box-shadow: var(--shadow-md);
 		cursor: pointer;
 	}
 
 	@media (min-width: 20em) {
-		button {
+		a {
 			font-size: var(--text-lg);
 		}
 	}
@@ -128,7 +128,7 @@ import Icon from '../components/Icon.astro'
 			font-size: var(--text-lg);
 		}
 
-		button {
+		a {
 			padding: 1.125rem 2.5rem;
 			font-size: var(--text-xl);
 		}

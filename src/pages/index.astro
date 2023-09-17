@@ -59,7 +59,7 @@ const projects = (await getCollection('work'))
 				</div>
 
 				<div class="cta">
-					<CallToAction href="/work/">
+					<CallToAction href="/work/" target=''>
 						View All
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
@@ -102,7 +102,7 @@ const projects = (await getCollection('work'))
 		}
 
 		.project:nth-child(1).hidden {
-			transform: translateY(-20%);
+			transform: translateY(-10%);
 		}
 
 		.project:nth-child(1).show {
