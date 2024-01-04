@@ -26,12 +26,13 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, I'm Richard ✌️"
-					tagline="Software Developer currently based in Nigeria, I appreciate the intricacies of code and human behavior, which translates into better, more user-centric applications."
+					intro='Hi, my name is'
+					title="IKENNA RICHARD"
+					tagline="Freelance Frontend Engineer in Lagos, Nigeria"
 					align="start"
 				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
+					<div class="get-in-touch">
+						<a href="#contact" class="cta">GET IN TOUCH</a>
 					</div>
 				</Hero>
 			</header>
@@ -78,8 +79,17 @@ const projects = (await getCollection('work'))
 		gap: 2rem;
 	}
 
-	.roles {
-		display: none;
+	.get-in-touch {
+		border: 1px solid var(--accent-regular);
+		width: fit-content;
+		padding: 1em;
+		margin: 0 auto;
+		cursor: pointer;
+	}
+
+	.cta {
+		text-decoration: none;
+		font-weight: bold;
 	}
 
 	.hero img {
@@ -120,9 +130,10 @@ const projects = (await getCollection('work'))
 			gap: 3.75rem;
 		}
 
-		.roles {
-			margin-top: 0.5rem;
+		.get-in-touch {
+			margin: 0;
 			display: flex;
+			font-size: 0.8rem;
 			gap: 0.5rem;
 		}
 	}
