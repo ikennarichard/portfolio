@@ -3,7 +3,7 @@ import Icon from './Icon.astro';
 ---
 
 <aside>
-	<h2>Interested in working together?</h2>
+	<h2>LET'S BUILD SOMETHING COOL</h2>
 	<div class="contact_form" id="contact">
 		<form action="https://formspree.io/f/xbjeoyol" method="post">
 			<label for="fullname" hidden>Fullname</label>
@@ -32,7 +32,7 @@ import Icon from './Icon.astro';
 				required
 			></textarea>
 			<button>
-				Send Me a Message
+				Send message
 				<Icon icon="paper-plane-tilt" size="1.2em" />
 			</button>
 		</form>
@@ -48,17 +48,16 @@ import Icon from './Icon.astro';
 		border-top: 1px solid var(--gray-800);
 		border-bottom: 1px solid var(--gray-800);
 		padding: 5rem 1.5rem;
-		background-color: var(--gray-900);
+		background-color: var(--gray-999);
 	}
 
 	h2 {
 		font-size: var(--text-xl);
 		text-align: center;
-		max-width: 15ch;
 	}
 
 	.contact_form {
-  width: 327px;
+  min-width: 500px;
 }
 
 form {
@@ -69,7 +68,7 @@ form {
 
 input,
 textarea {
-  border: 1px solid var(--light-gray);
+  border: 1px solid var(--gray-50);
   border-radius: 4px;
   padding-inline-start: 1em;
   font-size: 0.938rem;
@@ -130,9 +129,7 @@ button {
 	@media (min-width: 50em) {
 		aside {
 			padding: 7.5rem;
-			flex-direction: row;
 			flex-wrap: wrap;
-			justify-content: space-between;
 		}
 
 		h2 {
