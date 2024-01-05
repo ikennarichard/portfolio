@@ -51,7 +51,7 @@ const projects = (await getCollection('work'))
 					<Grid variant="offset">
 						{
 							projects.map((project) => (
-								<li class="hidden project">
+								<li class="project">
 									<PortfolioPreview project={project} />
 								</li>
 							))
@@ -111,19 +111,7 @@ const projects = (await getCollection('work'))
 			transform: translateY(0);
 		}
 
-		.project:nth-child(1).hidden {
-			transform: translateY(-10%);
-		}
-
-		.project:nth-child(1).show {
-			transform: translateY(2%);
-		}
-
-		.project:nth-child(2) {
-			transition-delay: 100ms;
-		}
-
-	@media (min-width: 50em) {
+	@media (min-width: 60em) {
 		.hero {
 			display: grid;
 			padding-inline: 2.5rem;
@@ -136,7 +124,7 @@ const projects = (await getCollection('work'))
 			font-size: 0.8rem;
 			gap: 0.5rem;
 		}
-	}
+	
 
 	/* ====================================================== */
 
@@ -175,7 +163,6 @@ const projects = (await getCollection('work'))
 		font-size: var(--text-2xl);
 	}
 
-	@media (min-width: 50em) {
 		.section {
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
@@ -207,7 +194,7 @@ const projects = (await getCollection('work'))
 		.cta {
 			grid-area: cta;
 		}
-	}
+	
 
 	/* ====================================================== */
 
@@ -224,7 +211,6 @@ const projects = (await getCollection('work'))
 		box-shadow: var(--shadow-sm);
 	}
 
-	@media (min-width: 50em) {
 		.mention-card {
 			border-radius: 1.5rem;
 			height: 9.5rem;
