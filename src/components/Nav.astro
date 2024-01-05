@@ -14,10 +14,9 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 ];
 ---
 
-<nav>
+<nav transition:animate="slide">
 	<div class="menu-header">
 		<a href="/" class="site-title">
-			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" />
 			richy~rich
 		</a>
 		<menu-button>
@@ -30,7 +29,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		</menu-button>
 	</div>
 	<div id="menu-content">
-		<ul class="nav-items">
+		<ul class="nav-items" >
 			{
 				textLinks.map(({ label, href }) => (
 					<li>

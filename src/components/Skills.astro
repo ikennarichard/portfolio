@@ -1,21 +1,22 @@
 ---
 import Icon from './Icon.astro';
+import { fade } from 'astro:transitions';
 ---
 
-<section class="skills">
-	<div class="stack gap-2 lg:gap-4 box hidden">
+<section class="skills" transition:animate={fade({ duration: '1s' })}>
+	<div class="stack gap-2 lg:gap-4 box">
 		<Icon icon="heart" color="var(--accent-regular)" size="2.5rem" />
 		<h2>Developer</h2>
 		<p>
 			I'm passionate about web development. Currently i'm focused on improving my skills as a frontend engineer and contributing to open source projects.
 		</p>
 	</div>
-	<div class="stack gap-2 lg:gap-4 box hidden">
+	<div class="stack gap-2 lg:gap-4 box">
 		<Icon icon="code" color="var(--accent-regular)" size="2.5rem" />
 		<h2>Languages / Frameworks</h2>
 		<p>I excel in front-end development with JavaScript, React, Redux, HTML5, and CSS3, and have a strong back-end foundation with Ruby, Ruby on Rails, and PostgreSQL.</p>
 	</div>
-	<div class="stack gap-2 lg:gap-4 box hidden">
+	<div class="stack gap-2 lg:gap-4 box">
 		<Icon icon="skills" color="var(--accent-regular)" size="2.5rem" />
 		<h2>Tools/Methods</h2>
 		<p>I utilize Git, GitHub, Netlify, RSpec/Capybara, Jest/RTL, TDD, Dev Tools, Bootstrap, and RESTful API practices to streamline my development process.</p>
@@ -29,8 +30,7 @@ import Icon from './Icon.astro';
 		padding: 1.5rem;
 		background-color: var(--gray-999_40);
 		box-shadow: var(--shadow-sm);
-		cursor: pointer;
-		transition: all 0.7s ease;
+		transition: transform 0.3s ease-in;
 	}
 
 	.box:hover {
@@ -52,21 +52,12 @@ import Icon from './Icon.astro';
 		color: var(--gray-400);
 	}
 
-	.hidden {
-		opacity: 0;
-		transform: translateX(-100%);
-	}
-
-	.show {
-		opacity: 1;
-		transform: translateX(0);
-	}
-
-	@media (min-width: 50em) {
+	@media (min-width: 60em) {
 		.box {
 			width: 20em;
 			border-radius: 1.5rem;
 			padding: 2.5rem;
+			position: relative;
 		}
 
 		.skills {
@@ -79,16 +70,3 @@ import Icon from './Icon.astro';
 		}
 	}
 </style>
-
-<script>
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('show');
-			} 
-		});
-	});
-
-	const skills = document.querySelectorAll('.box');
-	skills.forEach((el) => observer.observe(el));
-</script>
