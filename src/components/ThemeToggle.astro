@@ -68,6 +68,7 @@ import Icon from './Icon.astro';
 </style>
 
 <script>
+	document.addEventListener('astro:page-load', () => {
 	class ThemeToggle extends HTMLElement {
 		constructor() {
 			super();
@@ -92,4 +93,5 @@ import Icon from './Icon.astro';
 		}
 	}
 	customElements.define('theme-toggle', ThemeToggle);
+	})
 </script>
