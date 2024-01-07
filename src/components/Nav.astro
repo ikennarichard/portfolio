@@ -78,9 +78,8 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	</div>
 </nav>
 
-<script>
-import { sequence } from "astro:middleware";
-document.addEventListener('astro:page-load', () => {
+<script>import { sequence } from "astro:middleware";
+
 	class MenuButton extends HTMLElement {
 		constructor() {
 			super();
@@ -100,7 +99,7 @@ document.addEventListener('astro:page-load', () => {
 			menu.hidden = !expand;
 		};
 		
-	
+		document.addEventListener('astro:page-load', () => {
 			// Toggle menu visibility when the menu button is clicked.
 			btn.addEventListener('click', (e) => {
 				e.stopPropagation(); // Prevent click event from reaching the document
@@ -113,7 +112,7 @@ document.addEventListener('astro:page-load', () => {
 					setExpanded(menu.hidden);
 				}
 			});
-		
+		})
 			// Hide menu button for large screens.
 			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
 				setExpanded(e.matches);
@@ -125,7 +124,6 @@ document.addEventListener('astro:page-load', () => {
 		}
 	}
 	customElements.define('menu-button', MenuButton);
-})
 </script>
 
 <style>
