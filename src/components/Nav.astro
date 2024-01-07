@@ -99,19 +99,20 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 			menu.hidden = !expand;
 		};
 		
-		// Toggle menu visibility when the menu button is clicked.
-		btn.addEventListener('click', (e) => {
-			e.stopPropagation(); // Prevent click event from reaching the document
-			setExpanded(menu.hidden);
-		});
-
-		// Hide the menu when clicking anywhere outside the menu or the menu button
-		window.addEventListener('click', (e) => {
-			if (e.target !== menu && e.target !== btn) {
+		document.addEventListener('astro:page-load', () => {
+			// Toggle menu visibility when the menu button is clicked.
+			btn.addEventListener('click', (e) => {
+				e.stopPropagation(); // Prevent click event from reaching the document
 				setExpanded(menu.hidden);
-			}
-		});
+			});
 
+			// Hide the menu when clicking anywhere outside the menu or the menu button
+			window.addEventListener('click', (e) => {
+				if (e.target !== menu && e.target !== btn) {
+					setExpanded(menu.hidden);
+				}
+			});
+		})
 			// Hide menu button for large screens.
 			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
 				setExpanded(e.matches);
@@ -259,7 +260,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		height: calc(var(--icon-size) + 2 * var(--icon-padding));
 	}
 
-	@media (min-width: 50em) {
+	@media (min-width: 60em) {
 		nav {
 			display: grid;
 			grid-template-columns: 1fr auto 1fr;
