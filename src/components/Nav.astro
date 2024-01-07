@@ -99,7 +99,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 			menu.hidden = !expand;
 		};
 		
-		document.addEventListener('astro:page-load', () => {
+	
 			// Toggle menu visibility when the menu button is clicked.
 			btn.addEventListener('click', (e) => {
 				e.stopPropagation(); // Prevent click event from reaching the document
@@ -112,7 +112,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 					setExpanded(menu.hidden);
 				}
 			});
-		})
+
 			// Hide menu button for large screens.
 			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
 				setExpanded(e.matches);
