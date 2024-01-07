@@ -78,7 +78,8 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	</div>
 </nav>
 
-<script>
+<script>import { sequence } from "astro:middleware";
+
 	class MenuButton extends HTMLElement {
 		constructor() {
 			super();
@@ -87,18 +88,29 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 			this.appendChild(this.querySelector('template')!.content.cloneNode(true));
 			const btn = this.querySelector('button')!;
 
-			// Hide menu (shown by default to support no-JS browsers).
-			const menu = document.getElementById('menu-content')!;
-			menu.hidden = true;
+			const menu = document.getElementById('menu-content');
+  
+		// Hide menu (shown by default to support no-JS browsers).
+		menu.hidden = true;
+		
+		/** Set whether the menu is currently expanded or collapsed. */
+		const setExpanded = (expand: boolean) => {
+			btn.setAttribute('aria-expanded', expand ? 'true' : 'false');
+			menu.hidden = !expand;
+		};
+		
+		// Toggle menu visibility when the menu button is clicked.
+		btn.addEventListener('click', (e) => {
+			e.stopPropagation(); // Prevent click event from reaching the document
+			setExpanded(menu.hidden);
+		});
 
-			/** Set whether the menu is currently expanded or collapsed. */
-			const setExpanded = (expand: boolean) => {
-				btn.setAttribute('aria-expanded', expand ? 'true' : 'false');
-				menu.hidden = !expand;
-			};
-
-			// Toggle menu visibility when the menu button is clicked.
-			btn.addEventListener('click', () => setExpanded(menu.hidden));
+		// Hide the menu when clicking anywhere outside the menu or the menu button
+		window.addEventListener('click', (e) => {
+			if (e.target !== menu && e.target !== btn) {
+				setExpanded(menu.hidden);
+			}
+		});
 
 			// Hide menu button for large screens.
 			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
